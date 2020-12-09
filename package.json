@@ -1,0 +1,30 @@
+{
+  "name": "dalilah",
+  "version": "1.0.0",
+  "description": "Acamica dalilah's project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "cd src/ && nodemon server.js",
+    "InitializingDB": "node db/initializingDb.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samrs03/dalilah.git"
+  },
+  "author": "Samuel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samrs03/dalilah/issues"
+  },
+  "homepage": "https://github.com/samrs03/dalilah#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "config": "^3.3.3",
+    "express": "^4.17.1",
+    "http": "0.0.1-security",
+    "jsonwebtoken": "^8.5.1",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.3.5"
+  }
+}

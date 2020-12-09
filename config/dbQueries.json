@@ -1,0 +1,11 @@
+{
+    "queries": {
+        "login": "SELECT * FROM dalilah.users where user_name = ? ",
+        "listingUsers": "SELECT * FROM dalilah.users",
+        "registeringUsers": "INSERT INTO dalilah.users (user_name,user_email,user_full_name,user_phone,user_address,user_password,user_rol) VALUES (:user_name,:user_email,:user_full_name,:user_phone,:user_address,:user_password,:user_rol)",
+        "listingProducts": "SELECT * FROM dalilah.products",
+        "addingProducts": "INSERT INTO dalilah.products (product_name,product_price,product_stock) VALUES (:product_name,:product_price,:product_stock)",
+        "deletingProducts": "DELETE FROM dalilah.products WHERE product_name = :product_name",
+        "updatingProducts": "UPDATE dalilah.products set product_name=:product_name,product_price=:product_price,product_stock=:product_stock WHERE product_id=:product_id"
+    }
+}

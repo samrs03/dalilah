@@ -1,0 +1,11 @@
+{
+    "port": 5500,
+    "DBConfiguration": {
+        "db": "dalilah",
+        "User": "samuelr",
+        "Password": "Comfenalco6!",
+        "Host": "localhost",
+        "Dialect": "mysql"
+    },
+    "jwtSecretKey": "Sbo6rD3UezsD-vTx_bVpQ1sG3ceMItpnxeGuzQkiXGQ"
+}
