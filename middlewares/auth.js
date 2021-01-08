@@ -1,6 +1,6 @@
 const config = require("config");
 const jwt = require("jsonwebtoken");
-let userRol;
+let userRol, userID;
 const authorizationMiddleware = (req, res, next) => {
   const jwtToken = req.headers["authorization"];
   if (!jwtToken) {
@@ -12,6 +12,7 @@ const authorizationMiddleware = (req, res, next) => {
     }
     res.decoded = decoded;
     userRol = decoded.rol;
+    userID = decoded.id;
     next();
   });
 };
@@ -22,8 +23,11 @@ const isAdmin = (req, res, next) => {
     return res.status(401).json({ message: "Unauthorized" });
   }
 };
-
+const gettingUserID = () => {
+  return userID;
+};
 module.exports = {
   authorizationMiddleware,
   isAdmin,
+  gettingUserID,
 };

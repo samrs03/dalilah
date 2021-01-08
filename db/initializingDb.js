@@ -17,13 +17,30 @@ const creatingProductsTable = `CREATE TABLE IF NOT EXISTS products (
   product_price INTEGER NOT NULL,
   product_stock INTEGER NOT NULL   
 );`;
+
+  const creatingOrdersTable = `CREATE TABLE IF NOT EXISTS orders (
+    order_status ENUM('new','confirmed','making','delivered','cancelled'),
+    order_date TIMESTAMP NOT NULL,    
+    order_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    order_description VARCHAR(120) NOT NULL,
+    order_pay_method VARCHAR(15) NOT NULL,
+    order_price INT NOT NULL,
+    user_id INT NOT NULL,
+    CONSTRAINT FK_user_order FOREIGN KEY (user_id)
+    REFERENCES users(user_id)   
+  );`;
 const creatingTables = (...params) => {
   for (let i = 0; i < params.length; i++) {
     mySqlConnectionObject.query(params[i], { raw: true });
   }
 };
 const startDB = () => {
-  creatingTables(DBToUse, creatingUsersTable,creatingProductsTable);
+  creatingTables(
+    DBToUse,
+    creatingUsersTable,
+    creatingProductsTable,
+    creatingOrdersTable
+  );
 };
 
 startDB();

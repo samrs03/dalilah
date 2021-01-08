@@ -6,6 +6,7 @@
         "listingProducts": "SELECT * FROM dalilah.products",
         "addingProducts": "INSERT INTO dalilah.products (product_name,product_price,product_stock) VALUES (:product_name,:product_price,:product_stock)",
         "deletingProducts": "DELETE FROM dalilah.products WHERE product_name = :product_name",
-        "updatingProducts": "UPDATE dalilah.products set product_name=:product_name,product_price=:product_price,product_stock=:product_stock WHERE product_id=:product_id"
+        "updatingProducts": "UPDATE dalilah.products set product_name=:product_name,product_price=:product_price,product_stock=:product_stock WHERE product_id=:product_id",
+        "creatingOrder": "INSERT INTO dalilah.orders (order_status,order_date,order_description,order_pay_method,order_price,user_id) VALUES (:order_status,:order_date,:order_description,:order_pay_method,:order_price,:user_id)"
     }
 }

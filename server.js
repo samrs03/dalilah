@@ -27,6 +27,8 @@ server.use("/api/v1/dalilah/products/delete", deletingProductsRouter);
 const updatingProductsRouter = require("./routes/updatingProducts").router;
 server.use("/api/v1/dalilah/products/update", updatingProductsRouter);
 
+const creatingOrderRouter = require("./routes/creatingOrder").router;
+server.use("/api/v1/dalilah/orders/create", creatingOrderRouter);
 http.createServer(server).listen(config.port, () => {
   console.log(`App listening on port ${config.port}`);
 });
